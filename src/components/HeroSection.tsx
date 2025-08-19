@@ -1,7 +1,9 @@
 import { Play, Info, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import heroBanner from '@/assets/hero-banner.jpg';
+
+// Using a placeholder for hero background
+const heroBackground = 'https://via.placeholder.com/1920x1080/1a1a1a/6366f1?text=Epic+Adventure';
 
 interface FeaturedMovie {
   title: string;
@@ -35,7 +37,7 @@ export function HeroSection({ featuredMovie, onPlay, onMoreInfo }: HeroSectionPr
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroBanner}
+          src={heroBackground}
           alt="Hero background"
           className="w-full h-full object-cover"
         />

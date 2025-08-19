@@ -63,49 +63,24 @@
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 220 15% 15%;
     --sidebar-ring: 262 83% 58%;
-  }
-
-  .dark {
-    --background: 220 15% 6%;
-    --foreground: 210 40% 98%;
-    --card: 220 15% 8%;
-    --card-foreground: 210 40% 98%;
-  }
 }
 
-/* Custom components for streaming platform */
-@layer components {
-  .hero-gradient {
-    background: var(--hero-gradient);
+/* Custom utility classes */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
   
-  .card-gradient {
-    background: var(--card-gradient);
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
   
-  .glow-primary {
-    box-shadow: var(--glow-primary);
-  }
-  
-  .glow-card {
-    box-shadow: var(--glow-card);
-  }
-  
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
-  
-  .video-player-overlay {
-    background: hsl(var(--player-overlay));
-  }
-  
-  .movie-card-hover {
-    transform: scale(1.05);
-    z-index: 10;
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
@@ -115,7 +90,6 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    overflow-x: hidden;
+    @apply bg-background text-foreground;
   }
 }

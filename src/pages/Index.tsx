@@ -3,9 +3,6 @@ import { Header } from '@/components/Header';
 import { HeroSection } from '@/components/HeroSection';
 import { MovieCarousel } from '@/components/MovieCarousel';
 import { VideoPlayer } from '@/components/VideoPlayer';
-import movie1 from '@/assets/movie-1.jpg';
-import movie2 from '@/assets/movie-2.jpg';
-import movie3 from '@/assets/movie-3.jpg';
 
 interface Movie {
   id: string;
@@ -22,12 +19,12 @@ const Index = () => {
   const [currentlyPlaying, setCurrentlyPlaying] = useState<Movie | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Sample movie data
+  // Sample movie data with placeholder images for now
   const sampleMovies: Movie[] = [
     {
       id: '1',
       title: 'Dark Horizon',
-      poster: movie1,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/6366f1?text=Dark+Horizon',
       year: 2024,
       genre: 'Action',
       rating: 8.5,
@@ -37,7 +34,7 @@ const Index = () => {
     {
       id: '2',
       title: 'Stellar Odyssey',
-      poster: movie2,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/3b82f6?text=Stellar+Odyssey',
       year: 2024,
       genre: 'Sci-Fi',
       rating: 9.2,
@@ -47,7 +44,7 @@ const Index = () => {
     {
       id: '3',
       title: 'Shadow Realm',
-      poster: movie3,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/8b5cf6?text=Shadow+Realm',
       year: 2023,
       genre: 'Horror',
       rating: 7.8,
@@ -57,7 +54,7 @@ const Index = () => {
     {
       id: '4',
       title: 'Urban Legends',
-      poster: movie1,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/ef4444?text=Urban+Legends',
       year: 2023,
       genre: 'Thriller',
       rating: 8.1,
@@ -67,7 +64,7 @@ const Index = () => {
     {
       id: '5',
       title: 'Quantum Shift',
-      poster: movie2,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/10b981?text=Quantum+Shift',
       year: 2024,
       genre: 'Sci-Fi',
       rating: 8.7,
@@ -77,7 +74,7 @@ const Index = () => {
     {
       id: '6',
       title: 'Midnight Terror',
-      poster: movie3,
+      poster: 'https://via.placeholder.com/300x450/1a1a1a/f59e0b?text=Midnight+Terror',
       year: 2023,
       genre: 'Horror',
       rating: 7.5,
@@ -96,12 +93,10 @@ const Index = () => {
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
-    // TODO: Implement search functionality
     console.log('Searching for:', query);
   };
 
   const handleAddToList = (movie: Movie) => {
-    // TODO: Implement add to list functionality
     console.log('Added to list:', movie.title);
   };
 
@@ -177,7 +172,7 @@ const Index = () => {
                   <img
                     src={movie.poster}
                     alt={movie.title}
-                    className="w-full aspect-[2/3] object-cover rounded-lg cursor-pointer hover:scale-105 transition-smooth"
+                    className="w-full aspect-[2/3] object-cover rounded-lg cursor-pointer hover:scale-105 transition-all duration-300"
                     onClick={() => handleMoviePlay(movie)}
                   />
                   <h3 className="mt-2 text-sm font-medium truncate">{movie.title}</h3>
